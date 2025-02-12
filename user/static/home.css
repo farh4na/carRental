@@ -1,0 +1,196 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.Header {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Logo .Smartrental {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Smart {
+    color: #333;
+}
+
+.Rental {
+    color: #63C132;
+}
+
+.NavRight .Right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.NavLink, .Register {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.NavLink {
+    color: #333;
+}
+
+.NavLink:hover {
+    background-color: #63C132;
+    color: #fff;
+}
+
+.Register {
+    color: #fff;
+    background-color: #63C132;
+    border: 2px solid #63C132;
+}
+
+.Register:hover {
+    background-color: #fff;
+    color: #63C132;
+}
+
+/* Hero Section */
+.HeroSection {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.HeroSection h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.Highlight {
+    color: #63C132;
+    font-weight: bold;
+}
+
+.HeroSection p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Search Form */
+.SearchForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.FormRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.FormGroup {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 180px;
+}
+
+.FormGroup label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.FormGroup input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.FormGroup input:focus {
+    border-color: #63C132;
+}
+
+.SubmitButton {
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.SubmitButton:hover {
+    background-color: #63C132;
+}
+
+.CarList {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.CarList h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.CarList ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.CarList li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.CarList li:last-child {
+    border-bottom: none;
+}
+
+.CarImageContainer {
+    width: 200px;
+    height: 150px;
+    overflow: hidden; /* Ensures content outside the container is clipped */
+    border-radius: 5px; /* Optional */
+}
+
+.CarImageContainer img {
+    width: 100%;       /* Image scales to container's width */
+    height: 100%;      /* Image scales to container's height */
+    object-fit: cover; /* Crops to maintain aspect ratio */
+}
+
+

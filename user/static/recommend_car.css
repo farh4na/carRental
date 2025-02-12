@@ -1,0 +1,67 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.Header {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Logo .Smartrental {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Smart {
+    color: #333;
+}
+
+.Rental {
+    color: #63C132;
+}
+
+.NavRight .Right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.NavLink, .Register {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.NavLink {
+    color: #333;
+}
+
+.NavLink:hover {
+    background-color: #63C132;
+    color: #fff;
+}
+
+.Register {
+    color: #fff;
+    background-color: #63C132;
+    border: 2px solid #63C132;
+}
+
+.Register:hover {
+    background-color: #fff;
+    color: #63C132;
+}

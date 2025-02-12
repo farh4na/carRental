@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'home.css' %}">
+  
+</head>
+<body>
+<div class="Header">
+    <div class="Navbar">
+        <div class="Logo">
+            <div class="Smartrental"><span class="Smart">SMART</span><span class="Rental">RENTAL</span></div>
+        </div>
+        <div class="NavRight">
+            <div class="Right">
+                <!-- Link to the other pages -->
+                <a href="{% url 'home' %}" class="NavLink">Home</a>    
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'editprofile' %}" class="NavLink">Profile</a>
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="HeroSection">
+        <h1>FIND YOUR <span class="Highlight">RENTAL CAR</span></h1>
+        <p>We have many best rental car collections.</p>
+        <form class="SearchForm" method="POST" action="{% url 'recommend_car' %}">
+            {% csrf_token %}
+            <div class="FormRow">
+                <div class="FormGroup">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" placeholder="Airport or Anywhere" aria-label="Enter location">
+                </div>
+                <div class="FormGroup">
+                    <label for="pickup_date">Pickup Date</label>
+                    <input type="date" id="pickup_date" name="pickup_date" aria-label="Select pickup date">
+                </div>
+                <div class="FormGroup">
+                    <label for="pickup_time">Pickup Time</label>
+                    <input type="time" id="pickup_time" name="pickup_time" aria-label="Select pickup time">
+                </div>
+            </div>
+            <div class="FormRow">
+                <div class="FormGroup">
+                    <label for="return_date">Return Date</label>
+                    <input type="date" id="return_date" name="return_date" aria-label="Select return date">
+                </div>
+                <div class="FormGroup">
+                    <label for="return_time">Return Time</label>
+                    <input type="time" id="return_time" name="return_time" aria-label="Select return time">
+                </div>
+            </div>
+
+            <!-- Car Recommendation Form -->
+            <label for="car_type">Car Type:</label>
+            <select id="car_type" name="car_type" aria-label="Select car type" aria-label="Select car type">
+                <option value="none">None</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="hatchback">Hatchback</option>
+            </select>
+            <br>
+            <label for="transmission">Transmission:</label>
+            <select id="transmission" name="transmission" aria-label="Select transmission type">
+                <option value="none">None</option>
+                <option value="auto">Automatic</option>
+                <option value="manual">Manual</option>
+            </select>
+            <br>
+            <label for="brand">Brand:</label>
+            <select id="brand" name="brand" aria-label="Select car brand">
+                <option value="none">None</option>
+                <option value="proton">Proton</option>
+                <option value="perodua">Perodua</option>
+                <option value="honda">Honda</option>
+                <option value="toyota">Toyota</option>
+            </select>
+            <br>
+            <label for="seats">Seats:</label>
+            <select id="seats" name="seats" aria-label="Select number of seats">
+                <option value="none">None</option>
+                <option value="5">5 seats</option>
+                <option value="7">7 seats</option>
+            </select>
+            <br>
+            <label for="price_range">Price Range:</label>
+            <select id="price_range" name="price_range" aria-label="Select price range">
+                <option value="none">None</option>
+                <option value="0-200">0-200</option>
+                <option value="200">200></option>
+            </select>
+            <div class="FormRow">
+                <button type="submit" class="SubmitButton">FIND YOUR CAR</button>
+            </div>
+        </form>
+        {% if form.errors %}
+            <div class="error-message">
+                <p>Please correct the errors below:</p>
+                <ul>
+                    {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                            <li>{{ field }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+    <div class="CarList">
+        <h2>Available Cars</h2>
+        <ul>
+            {% for car in cars %}
+            <li>
+                <div class="CarImageContainer">
+                <img src="{{ car.image.url }}" alt="{{ car.name }}"
+                ></div>
+                <h3>{{ car.name }}</h3>
+                <p>Brand: {{ car.brand }}</p>
+                <p>Type: {{ car.car_type }}</p>
+                <p>Seats: {{ car.seats }}</p>
+                <p>Price: RM{{ car.price }}</p>
+                
+            </li>
+            {% empty %}
+            <p>No cars available at the moment.</p>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'editprofile.css' %}">
+  <title>Registration Page</title>
+</head>
+<div class="Header">
+    <div class="Navbar">
+        <div class="Logo">
+            <div class="Smartrental"><span class="Smart">SMART</span><span class="Rental">RENTAL</span></div>
+        </div>
+        <div class="NavRight">
+            <div class="Right">
+                <!-- Link to the other pages -->
+                <a href="{% url 'home' %}" class="NavLink">Home</a>
+            </div>
+        </div>
+    </div>
+    <div class="Billboard">
+        <div class="BgOuter">
+            <div class="BgInner"></div>
+            <div class="PatternRight">
+                <div class="Polygon2"></div>
+            </div>
+            <div class="IconText">
+                <div class="EditProfile">EDIT PROFILE</div>
+            <form method="post" action="{% url 'editprofile' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="InputFieldWithLabel">
+                    <label class="Label" for="username">Username</label>
+                    <input class="Field" type="text" id="username" name="username" placeholder="Enter your username">
+                </div>
+                <div class="InputFieldWithLabel">
+                    <label class="Label" for="email">Email Address</label>
+                    <input class="Field" type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="InputFieldWithLabel">
+                    <label class="Label" for="password">Password</label>
+                    <input class="Field" type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+                <div class="InputFieldWithLabel">
+                    <label class="Label" for="confirm_password">Re-type Password</label>
+                    <input class="Field" type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter your password">
+                </div>
+                <div class="InputFieldWithLabel">
+                    <label class="Label" for="phone_number">Phone Number</label>
+                    <input class="Field" type="text" id="phone_number" name="phone_number" placeholder="Enter your phone number">
+                </div>
+                <div class="InputFieldWithLabel">
+                    <label class="Label" for="address">Address</label>
+                    <input class="Field" type="text" id="address" name="address" placeholder="Enter your address">
+                </div>
+
+                <div class="Button">
+                    <button class="UpdateBtn" type="submit">UPDATE</button>
+                </div>
+            </form>
+                
+    
+            </div>
+            <div class="PatternLeft"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'recommend_car.css' %}">
+  
+</head>
+<body>
+<!-- Navigation Bar -->
+<div class="Header">
+    <div class="Navbar">
+        <div class="Logo">
+            <div class="Smartrental"><span class="Smart">SMART</span><span class="Rental">RENTAL</span></div>
+        </div>
+        <div class="NavRight">
+            <div class="Right">
+                <!-- Link to the other pages -->
+                <a href="{% url 'home' %}" class="NavLink">Home</a>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'editprofile' %}" class="NavLink">Profile</a>
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="HeroSection">
+    <h1>RECOMMENDED CAR</h1>
+    <p>Based on your preferences, we recommend the following car:</p>
+
+    <!-- Display Recommended Car Details -->
+    {% if recommended_car %}
+        <h2>Recommended Car: {{ recommended_car.name }}</h2>
+        <p><strong>Car Type:</strong> {{ recommended_car.car_type }}</p>
+        <p><strong>Transmission:</strong> {{ recommended_car.transmission }}</p>
+        <p><strong>Brand:</strong> {{ recommended_car.brand }}</p>
+        <p><strong>Seats:</strong> {{ recommended_car.seats }}</p>
+        <p><strong>Price Range:</strong> {{ recommended_car.price_range }}</p>
+        <p><strong>Price:</strong> {{ recommended_car.price }}</p>
+
+        <!-- Check for Image -->
+       {% if recommended_car.image %}
+            <p><strong>Image:</strong> <img src="{{ recommended_car.image.url }}" alt="Car Image" class="car-image"></p>
+        {% endif %}
+
+    {% else %}
+             <p>No car recommendations found. Please try again.</p>
+    {% endif %}
+    
+   <!-- Display search details -->
+   <p><strong>Location:</strong> {{ location }}</p>
+   <p><strong>Pickup Date:</strong> {{ pickup_date }}</p>
+   <p><strong>Pickup Time:</strong> {{ pickup_time }}</p>
+   <p><strong>Return Date:</strong> {{ return_date }}</p>
+   <p><strong>Return Time:</strong> {{ return_time }}</p>
+   <p><strong>Car Type:</strong> {{ car_type }}</p>
+   <p><strong>Transmission:</strong> {{ transmission }}</p>
+   <p><strong>Brand:</strong> {{ brand }}</p>
+   <p><strong>Seats:</strong> {{ seats }}</p>
+   <p><strong>Price Range:</strong> {{ price_range }}</p>
+   <p><strong>Car Dealer Contact Number: 019-9876543</strong></p>
+
+    <!-- Add a link to go back to the form page -->
+    <a href="{% url 'home' %}">Go Back</a>
+</div>
+
+</body>
+</html>

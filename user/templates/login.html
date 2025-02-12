@@ -1,0 +1,61 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <title>Login Page</title>
+</head>
+<body>
+<div class="Header">
+    <div class="Navbar">
+        <div class="Logo">
+            <div class="Smartrental"><span class="Smart">SMART</span><span class="Rental">RENTAL</span></div>
+        </div>
+        <div class="NavRight">
+            <div class="Right">
+            <a href="{% url 'login' %}" class="NavLink">Login</a>
+            <a href="{% url 'register' %}" class="Register">Register</a>
+            </div>
+        </div>
+    </div>
+        <div class="Billboard">
+            <div class="BgOuter">
+                <div class="BgInner"></div>
+                <div class="PatternRight">
+                    <div class="Polygon2"></div>
+                </div>
+                <div class="IconText">
+                    <div class="LogIn">Log in</div>
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    
+                    <div class="InputFieldWithLabel">
+                        <label class="Label" for="username">Username</label>
+                        <input class="Field" type="username" id="username" name="username" placeholder="Enter your email" required>
+                    </div>
+                    <div class="InputFieldWithLabel">
+                        <label class="Label" for="password">Password</label>
+                        <input class="Field" type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div><a href="{% url 'register' %}" type="submit">Don't have an account?</div>
+                    
+                    <div class="Button">
+                        <button class="LoginBtn" type="submit">LOGIN</button>
+                    </div>
+                </form>
+                {% if messages %}
+    <div class="error-message">
+        {% for message in messages %}
+            <p style="color: red;">{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

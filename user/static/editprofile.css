@@ -1,0 +1,293 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.Header {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Logo .Smartrental {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Smart {
+    color: #333;
+}
+
+.Rental {
+    color: #63C132;
+}
+
+.NavRight .Right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.NavLink, .Register {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.NavLink {
+    color: #333;
+}
+
+.NavLink:hover {
+    background-color: #63C132;
+    color: #fff;
+}
+
+.Register {
+    color: #fff;
+    background-color: #63C132;
+    border: 2px solid #63C132;
+}
+
+.Register:hover {
+    background-color: #fff;
+    color: #63C132;
+}
+
+
+
+.Billboard {
+    width: 100%; /* Make sure it spans the full width */
+    padding: 0 10%; /* Add padding on the sides for some space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+
+.BgOuter {
+    width: 100%;
+    height: 727px;  /* Use height that fits content */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.BgInner {
+    width: 100%;
+    height: 444px;
+    background: white;
+}
+
+
+.PatternRight {
+    width: 308px;
+    height: 444px;
+    position: relative;
+}
+
+.Polygon2 {
+    position: absolute;
+    width: 1091.19px;
+    height: 758.25px;
+    left: -91.89px;
+    top: -174.75px;
+}
+
+.IconText {
+    width: 100%;
+    max-width: 800px; /* Limit the form width to prevent it from stretching too wide */
+    padding: 40px;
+    background: white;
+    box-shadow: 0px 12px 90px rgba(11.69, 11.69, 11.69, 0.06);
+    border-radius: 9px;
+    border: 1px #FAFAFA solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+}
+
+.EditProfile {
+    text-align: center;
+    color: #414141;
+    font-size: 16px;
+    font-family: Raleway;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.44px;
+    word-wrap: break-word;
+}
+
+/* Each input field with label should have space around it */
+.InputFieldWithLabel {
+    width: 100%;
+    max-width: 600px; /* Limit input field width */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px; /* Space between fields */
+}
+
+/* Input field styling */
+.Field {
+    width: 100%;
+    padding: 12px 16px;
+    background: white;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    border: 1px #E0E0E0 solid;
+    font-size: 16px;
+    font-family: Inter;
+    color: #333;
+}
+
+/* Label styling */
+.Label {
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 500;
+    color: #828282;
+    line-height: 24px;
+}
+
+.Button {
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: black;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+}
+
+
+/* Adjusted input fields when file upload is involved */
+.Field[type="file"] {
+    width: auto;
+    padding: 5px;
+}
+
+.Text {
+    align-self: stretch;
+    height: 85px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+}
+
+/* Ensure the submit button is styled and interactive */
+.UpdateBtn {
+    width: 100%;
+    max-width: 600px; /* Limit button width */
+    padding: 14px;
+    background: black;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: Raleway;
+    font-weight: 700;
+    line-height: 24px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.UpdateBtn:hover {
+    background-color: #333; /* Darken the button when hovered */
+}
+
+/* Styling for the divider section */
+.Divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Horizontal divider lines */
+.Rectangle11, .Rectangle10 {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #E6E6E6;
+}
+
+
+
+.PatternLeft {
+    padding-top: 8px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    display: inline-flex;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .Header {
+        padding: 0 20px; /* Adjust padding on small screens */
+    }
+    
+    .Navbar {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: center;
+    }
+    
+    .Logo {
+        margin-bottom: 10px;
+    }
+    
+    .NavRight {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .Btn {
+        margin-top: 10px;
+    }
+
+    .Billboard {
+        padding: 0 5%;
+        margin-top: 80px; /* Adjust margin-top for smaller screens */
+    }
+
+    .IconText {
+        padding: 30px;
+        width: 100%;
+    }
+
+    .InputFieldWithLabel {
+        width: 100%;
+    }
+
+    .UpdateBtn {
+        width: 100%;
+    }
+}
